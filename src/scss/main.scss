@@ -1,0 +1,12 @@
+// Base
+@use "./base/reaset";
+@use "./utils/variebles";
+@use "./utils/placeholders";
+@use "./base/common";
+@use "./base/container";
+// Layout
+@use "./layout/header";
+@use "./layout/room";
+@use "./layout/characres";
+@use "./layout/footer";
+@use "./layout/thank_you_modal";
