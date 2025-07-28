@@ -1,11 +1,11 @@
 {
-  "name": "project-name",
+  "name": "Hakaton_0.2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build --base=/project-name/",
+    "build": "vite build --base=/Hakaton_0.2/",
     "preview": "vite preview"
   },
   "devDependencies": {
