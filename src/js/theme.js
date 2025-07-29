@@ -1,3 +1,5 @@
+import { updateFloorTexture, bgImage, bgImageDark } from './room.js';
+
 let darkMode = false;
 const themes = {
     light: {
@@ -23,8 +25,18 @@ const themes = {
   document.querySelector('#themeToggle').addEventListener('click', () => {
     darkMode = !darkMode;
     const selectedTheme = darkMode ? themes.dark : themes.light;
-    for (let prop in selectedTheme) {
-      document.documentElement.style.setProperty(prop, selectedTheme[prop]);
+  
+    // Применить тему
+    for (const [prop, value] of Object.entries(selectedTheme)) {
+      document.documentElement.style.setProperty(prop, value);
     }
+  
+    // Обновить пол
+    updateFloorTexture(darkMode ? bgImageDark : bgImage);
   });
+  
+  
+ 
+
+  
   

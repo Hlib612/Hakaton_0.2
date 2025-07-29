@@ -1,59 +1,70 @@
-@use "../utils/variebles";
-@use "../utils/placeholders";
+// @use "../utils/variebles";
+// @use "../utils/placeholders";
 
-body.show-save-modal .save-modal-backdrop {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
-  }
+// body.show-save-modal .save-modal-backdrop {
+//     opacity: 1;
+//     visibility: visible;
+//     pointer-events: initial;
+//   }
   
-  body.show-save-modal .save-modal {
-    transform: scale(1);
-  }
+//   body.show-save-modal .save-modal {
+//     transform: scale(1);
+//   }
   
-  .save-modal-backdrop {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
+//   .save-modal-backdrop {
+//     opacity: 0;
+//     visibility: hidden;
+//     pointer-events: none;
+//     transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     image-rendering: pixelated;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 999;
+//   }
   
-  .save-modal {
-    padding: 83px 138px 138px 138px;
-    background: var(--main-bg-color);
-    border-radius: 20px;
-    max-width: 464px;
-    width: 100%;
-    transform: scale(1.1);
-    transition: transform 200ms ease-in-out;
-    position: relative;
-    @media (max-width: 480px) {
-      padding: 43px 98px 98px 98px;
-      max-width: 444px;
-    }
-    &-title {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 16px;
-      color: var(--main-text-color);
-      text-align: center;
-    }
-  }
+//   .save-modal {
+//     padding: 83px 138px 138px 138px;
+//     border-radius: 20px;
+//     max-width: 464px;
+//     width: 100%;
+//     transform: scale(1.1);
+//     transition: transform 200ms ease-in-out;
+//     position: relative;
+//     background-color: var(--main-bg-color);
+//     border: 4px solid #000;
+//     border-radius: 0;
+//     padding: 32px;
+//     box-shadow: 0 0 0 4px #7b5c38;
+//     font-family: 'Press Start 2P', monospace;
+//     text-transform: uppercase;
+//     @media (max-width: 480px) {
+//       padding: 43px 98px 98px 98px;
+//       max-width: 444px;
+//     }
+//     &-title {
+//       font-family: var(--font-family);
+//       font-weight: 400;
+//       font-size: 10px;
+//       color: var(--main-text-color);
+//       text-align: center;
+//     }
+//   }
 
-  .button-save-close {
-    border: none;
-    background: transparent;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-  }
+//   .button-save-close {
+//     width: 16px;
+//     height: 16px;
+//     border: none;
+//     background: transparent;
+//     position: absolute;
+//     image-rendering: pixelated;
+//     cursor: pointer;
+//     top: 10px;
+//     right: 5px;
+//   }

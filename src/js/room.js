@@ -12,6 +12,20 @@ import flowerPot from "../img/forniture/pixel-flower-pot.png";
 import cooler from "../img/forniture/pixel-cooler.png";
 import plant from "../img/forniture/plant.png";
 import bgImage from "./../img/parquet.png";
+import bgImageDark from "./../img/parquet-dark-mode.png";
+
+let currentFloor = bgImage;
+
+function updateFloorTexture(texture) {
+  const cells = document.querySelectorAll('.grid-cell');
+  cells.forEach(cell => {
+    if (!cell.querySelector('.furniture')) {
+      cell.style.backgroundImage = `url('${texture}')`;
+    }
+  });
+}
+
+
 
 // === Каталог меблів ===
 const catalogItems = [
@@ -185,7 +199,7 @@ colorPicker.addEventListener("input", (event) => {
 for (let i = 0; i < 36; i++) {
   const cell = document.createElement('div');
   cell.className = 'grid-cell';
-  cell.style.backgroundImage = `url('${bgImage}')`;
+  cell.style.backgroundImage = `url('${currentFloor}')`
 
   cell.addEventListener('click', () => {
     if (selected.item) {
@@ -226,3 +240,6 @@ categoryButtons.forEach((button) => {
     renderCatalogItems(filteredItems);
   });
 });
+
+
+export { updateFloorTexture, bgImage, bgImageDark };
