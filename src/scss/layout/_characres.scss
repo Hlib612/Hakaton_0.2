@@ -10,7 +10,7 @@
   img {
     width: 130px;
     height: 130px;
-    border: 2px solid #d6b87c;
+    border: 2px solid var(--second-bg-color);
     cursor: pointer;
     &.selected {
       border-color: blue;
@@ -21,9 +21,9 @@
 #add-character {
   font-family: 'Press Start 2P', system-ui;
   margin-bottom: 10px;
-  background-color: #d6b87c;
+  background-color: var(--second-bg-color);
   border: none;
-  color: #3e3e3e;
+  color: var(--main-text-color);
   border-radius: 4px;
   cursor: pointer;
   width: 350px;
