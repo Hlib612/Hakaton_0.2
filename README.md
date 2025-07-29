@@ -50,3 +50,5 @@
    [Посилання на презентацію](https://www.canva.com/design/DAGujEYwc24/A7K-YmWdpachaMJ3SbPEvQ/edit?utm_content=DAGujEYwc24&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
 
 ![just picture](./src/img/Pixel_text_2.png);
+
+## Ми зробили це все за день
