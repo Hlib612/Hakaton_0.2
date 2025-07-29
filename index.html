@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoomCraft</title>
     
-    <script type="module" crossorigin src="/Hakaton_0.2/assets/index-5ce65563.js"></script>
-    <link rel="stylesheet" href="/Hakaton_0.2/assets/index-a8dace9f.css">
+    <script type="module" crossorigin src="/Hakaton_0.2/assets/index-65d75f56.js"></script>
+    <link rel="stylesheet" href="/Hakaton_0.2/assets/index-40213d51.css">
   </head>
   <body>
     <header>
-      
+      <header class="header">
+    <div class="container">
+        <div class="headerFlex">
+            <a href="#"><img src="" alt="logo" class="headerFlex_logo"></a>
+            <ul class="headerFlex_list">
+                <li class="headerFlex_item">
+                    <a href="#" class="headerFlex_link">Кімната</a>
+                </li>
+                <li class="headerFlex_item">
+                    <a href="#" class="headerFlex_link">Персонаж</a>
+                </li>
+            </ul>
+            <div class="headerTheme">
+                <label class="headerTheme_label">
+                    <input type="checkbox" class="headerTheme_checkbox" id="themeToggle">
+                    <span class="headerTheme_slider"></span>
+                </label>
+            </div>
+        </div>
+        
+    </div>
+</header>
     </header>
     <main>
 
@@ -88,7 +109,41 @@
 </main>
 
 <footer>
-  
+  <footer class="footer" id="footer">
+    <div class="container footer-flex-container">
+      
+      <div class="footer-img" data-aos="fade-right"
+       data-aos-easing="ease-in-sine"
+       data-aos-delay="400">
+        <a href="../index.html"><img src="" alt="logotype"></a>
+      </div>
+      <ul class="footer-list" data-aos="zoom-in-down" data-aos-delay="800">
+        <li class="footer-list-item"><a href="tel:+381237658724">Тел: +38 (123) 765 87 24</a></li>
+        <li class="footer-list-item"><a href="mailto:codingmagic@gmail.com">roomcraft@gmail.com</a></li>
+        <li class="footer-list-item"><a href="#">Facebook: RoomCraft</a></li>
+        <li class="footer-list-item"><a href="#">Twitter: RoomCraft</a></li>
+        <li class="footer-list-item"><a href="#">Instagram: RoomCraft</a></li>
+      </ul>
+     
+      <div class="footer-subscribe">
+        <form action="#" class="footer-subscribe-form">
+          <input
+            type="email"
+            placeholder="Ваша ел. адреса..."
+            class="footer-email-input"
+            required
+            data-aos="zoom-in-down" data-aos-delay="1200"
+          >
+          <button type="submit" class="footer-subscribe-button" data-action="open-footer-modal" data-aos="zoom-in-down" data-aos-delay="1600">
+            Підписатись
+          </button>
+        </form>
+        <p class="footer-subscribe-note">
+          *Підписавшись, Ви зможете оптимізувати інформацію про новинки на сайті
+        </p>
+      </div>
+    </div>
+  </footer>
 </footer>
 
     
