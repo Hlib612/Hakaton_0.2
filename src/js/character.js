@@ -1,17 +1,17 @@
 // === 1. Опис кадрів для кожного персонажа ===
+import dudeWalk from '../img/dude_walk_animation.png';
+import dudeIdle from '../img/dude.png';
+
+import hogWalk from '../img/hog_rider_walk_animation.png';
+import hogIdle from '../img/hog_rider.gif';
+
+import amogusWalk from '../img/amogus_walk_animation.png';
+import amogusIdle from '../img/amogus.png';
+
 const characterFrames = {
-  dude: [
-    './img/dude_walk_animation.png', // кадр ходьби
-    './img/dude.png'                 // стоячий кадр
-  ],
-  hog: [
-    './img/hog_rider_walk_animation.png',
-    './img/hog_rider.gif'
-  ],
-  amogus: [
-    './img/amogus_walk_animation.png',
-    './img/amogus.png'
-  ]
+  dude: [dudeWalk, dudeIdle],
+  hog: [hogWalk, hogIdle],
+  amogus: [amogusWalk, amogusIdle]
 };
 
 // === 2. Вибір персонажа ===
@@ -36,6 +36,7 @@ document.getElementById('add-character').addEventListener('click', function() {
     alert('Оберіть персонажа!');
     return;
   }
+
   const field = document.getElementById('room');
 
   // Видаляємо всіх старих персонажів
@@ -45,6 +46,7 @@ document.getElementById('add-character').addEventListener('click', function() {
   charImg.src = selectedCharacter;
   charImg.className = 'character';
   charImg.dataset.characterType = selectedCharacterType;
+  charImg.style.position = 'absolute';
   field.appendChild(charImg);
 
   // Центруємо персонажа
