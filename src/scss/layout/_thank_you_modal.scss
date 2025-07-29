@@ -1,2 +1,59 @@
 @use "../utils/variebles";
 @use "../utils/placeholders";
+
+body.show-save-modal .save-modal-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+  }
+  
+  body.show-save-modal .save-modal {
+    transform: scale(1);
+  }
+  
+  .save-modal-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .save-modal {
+    padding: 83px 138px 138px 138px;
+    background: var(--main-bg-color);
+    border-radius: 20px;
+    max-width: 464px;
+    width: 100%;
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
+    position: relative;
+    @media (max-width: 480px) {
+      padding: 43px 98px 98px 98px;
+      max-width: 444px;
+    }
+    &-title {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--main-text-color);
+      text-align: center;
+    }
+  }
+
+  .button-save-close {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
