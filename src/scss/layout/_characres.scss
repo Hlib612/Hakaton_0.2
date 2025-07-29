@@ -1,2 +1,77 @@
-@use "../utils/variebles";
-@use "../utils/placeholders";
+@use '../utils/variebles';
+@use '../utils/placeholders';
+
+.characters-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 80px;
+  img {
+    width: 130px;
+    height: 130px;
+    border: 2px solid #d6b87c;
+    cursor: pointer;
+    &.selected {
+      border-color: blue;
+    }
+  }
+}
+
+#add-character {
+  font-family: 'Press Start 2P', system-ui;
+  margin-bottom: 10px;
+  background-color: #d6b87c;
+  border: none;
+  color: #3e3e3e;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 350px;
+  height: 55px;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  10% {
+    transform: rotate(-5deg);
+  }
+
+  20% {
+    transform: rotate(5deg);
+  }
+
+  30% {
+    transform: rotate(-5deg);
+  }
+
+  40% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+#add-character:hover {
+  animation-name: shake;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+  animation-delay: 100ms;
+}
+
+.character {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  transition: left 0.3s, top 0.3s;
+  cursor: pointer;
+  z-index: 100;
+}
