@@ -11,7 +11,12 @@ import boombox from "../img/forniture/boombox.png";
 import flowerPot from "../img/forniture/pixel-flower-pot.png";
 import cooler from "../img/forniture/pixel-cooler.png";
 import plant from "../img/forniture/plant.png";
+import computerSetup from "../img/forniture/gaimingSetup.png";
+import chairWithCat from "../img/forniture/chairWithCat.png";
+import secondBed from "../img/forniture/bed.png";
+
 import bgImage from "./../img/parquet.png";
+
 
 // === Каталог меблів ===
 const catalogItems = [
@@ -26,12 +31,14 @@ const catalogItems = [
   { type: "decor", price: 99, name: "Рослина", image: plant },
   { type: "furniture", price: 199, name: "Шафа", image: wardrobe },
   { type: "furniture", price: 99, name: "Книжки", image: bookshelf },
-  { type: "furniture", price: 99, name: "Тумба", image: nightstand }
+  { type: "furniture", price: 99, name: "Тумба", image: nightstand },
+  { type: "tech", price: 1199, name: "ПК 2.0", image: computerSetup },
+  { type: "furniture", price: 197, name: "Крісло", image: chairWithCat },
+  { type: "furniture", price: 256, name: "Крісло", image: secondBed }
 ];
 
 const selected = { item: null };
 
-// === DOM елементи ===
 const itemsContainer = document.querySelector('.items');
 const grid = document.querySelector('.grid');
 const colorPicker = document.querySelector('#wallColor');
@@ -50,7 +57,6 @@ const trueBtn = document.querySelector('#trueBtn');
 const falseBtn = document.querySelector('#falseBtn');
 const categoryButtons = document.querySelectorAll('.catalog-categories button');
 
-// === Початковий туторіал ===
 let currentTipIndex = 0;
 
 function showTip(index) {
@@ -105,7 +111,6 @@ window.onload = () => {
   });
 };
 
-// === Категорії ===
 function filterItems(category) {
   if (category === 'all') return catalogItems;
   return catalogItems.filter(item => item.type === category);
@@ -117,7 +122,6 @@ function clearContainer(container) {
   }
 }
 
-// === Створення об'єкта меблів ===
 function createFurniture(imageURL) {
   const furniture = document.createElement('div');
   furniture.className = 'furniture';
@@ -127,18 +131,9 @@ function createFurniture(imageURL) {
     furniture.remove();
   });
 
-  // Поворот при кліку (опціонально — раскомментуй, якщо потрібно)
-  // furniture.addEventListener('click', () => {
-  //   const current = parseInt(furniture.dataset.rotation || 0);
-  //   const next = (current + 90) % 360;
-  //   furniture.dataset.rotation = next;
-  //   furniture.style.transform = `rotate(${next}deg)`;
-  // });
-
   return furniture;
 }
 
-// === Відображення каталогу ===
 function renderCatalogItems(items) {
   clearContainer(itemsContainer);
   items.forEach(item => {
@@ -176,12 +171,10 @@ function renderCatalogItems(items) {
 
 renderCatalogItems(catalogItems);
 
-// === Зміна кольору стін ===
 colorPicker.addEventListener("input", (event) => {
   walls.forEach(wall => wall.style.backgroundColor = event.target.value);
 });
 
-// === Побудова сітки ===
 for (let i = 0; i < 36; i++) {
   const cell = document.createElement('div');
   cell.className = 'grid-cell';
@@ -210,12 +203,10 @@ for (let i = 0; i < 36; i++) {
   grid.appendChild(cell);
 }
 
-// === Кнопка "Зберегти" ===
 document.querySelector('#save-btn').addEventListener('click', () => {
   alert('Збереження ще в розробці!');
 });
 
-// === Фільтрація по категоріях ===
 categoryButtons.forEach((button) => {
   button.addEventListener('click', () => {
     categoryButtons.forEach(btn => btn.classList.remove('active'));
