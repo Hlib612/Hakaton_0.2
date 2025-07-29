@@ -104,9 +104,16 @@
     border: 2px solid transparent;
   }
 
+
   .item-label {
+    margin-top: 6px;
     font-size: 8px;
     color: #3E3E3E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .item-price {
