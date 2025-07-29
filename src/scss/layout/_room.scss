@@ -2,7 +2,7 @@
 @use "../utils/placeholders";
 
 /* === Base === */
-body {
+main {
   font-family: "Press Start 2P", system-ui;
   font-size: 10px;
   background-color: #FFF9F0;
@@ -205,7 +205,7 @@ input[type="color"] {
 }
 
 .grid-cell {
-  background-image: url('./assets/parquet.png');
+  background-image: url('../../img/parquet.png');
   background-size: cover;
   background-position: center;
   border: 1px solid #999;
@@ -233,6 +233,8 @@ input[type="color"] {
 
 .tutorial {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
