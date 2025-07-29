@@ -1,16 +1,36 @@
+// === Імпорти меблів ===
+import bed from "../img/forniture/bed-pixel.png";
+import table from "../img/forniture/table-pixel.png";
+import gameChair from "../img/forniture/pixel-gamechair.png";
+import wardrobe from "../img/forniture/tallWardrobe.png";
+import bookshelf from "../img/forniture/books-pixel.png";
+import nightstand from "../img/forniture/pixel-nightstand.png";
+
+
+import computer from "../img/forniture/pixel-computer.png";
+import tv from "../img/forniture/pixel-tv.png";
+import boombox from "../img/forniture/boombox.png";
+
+
+import flowerPot from "../img/forniture/pixel-flower-pot.png";
+import cooler from "../img/forniture/pixel-cooler.png";
+import plant from "../img/forniture/plant.png";
+
+import bgImage from "./../img/parquet.png";
+
 const catalogItems = [
-  { type: "furniture", price: 499, name: "Ліжко", image: "../img/forniture/bed-pixel.png" },
-  { type: "furniture", price: 70, name: "Стіл", image: "../img/forniture/table-pixel.png" },
-  { type: "tech", price: 1299, name: "Комп'ютер", image: "../img/forniture/pixel-computer.png" },
-  { type: "decor", price: 40, name: "Квітка", image: "../img/forniture/pixel-flower-pot.png" },
-  { type: "decor", price: 259, name: "Кулер", image: "../img/forniture/pixel-cooler.png" },
-  { type: "tech", price: 759, name: "Телевізор", image: "../img/forniture/pixel-tv.png" },
-  { type: "furniture", price: 200, name: "Ігрове крісло", image: "../img/forniture/pixel-gamechair.png" },
-  { type: "tech", price: 150, name: "Бумбокс", image: "../img/forniture/boombox.png" },
-  { type: "decor", price: 99, name: "Рослина", image: "../img/forniture/plant.png" },
-  { type: "furniture", price: 199, name: "Шафа", image: "../img/forniture/tallWardrobe.png" },
-  { type: "furniture", price: 99, name: "Книжна Шафа", image: "../img/forniture/books-pixel.png" },
-  { type: "furniture", price: 99, name: "Тумба", image: "../img/forniture/pixel-nightstand.png" }
+  { type: "furniture", price: 499, name: "Ліжко", image: bed },
+  { type: "furniture", price: 70, name: "Стіл", image: table },
+  { type: "tech", price: 1299, name: "Комп'ютер", image: computer },
+  { type: "decor", price: 40, name: "Квітка", image: flowerPot },
+  { type: "decor", price: 259, name: "Кулер", image: cooler },
+  { type: "tech", price: 759, name: "Телевізор", image: tv },
+  { type: "furniture", price: 200, name: "Ігрове крісло", image: gameChair },
+  { type: "tech", price: 150, name: "Бумбокс", image: boombox },
+  { type: "decor", price: 99, name: "Рослина", image: plant },
+  { type: "furniture", price: 199, name: "Шафа", image: wardrobe },
+  { type: "furniture", price: 99, name: "Книжна Шафа", image: bookshelf },
+  { type: "furniture", price: 99, name: "Тумба", image: nightstand }
 ];
 
 const selected = { item: null };
@@ -149,6 +169,7 @@ colorPicker.addEventListener("input", (event) => {
 for (let i = 0; i < 36; i++) {
   const cell = document.createElement('div');
   cell.className = 'grid-cell';
+  cell.style.backgroundImage = `url('${bgImage}')`
 
   cell.addEventListener('click', () => {
     if (selected.item) {
