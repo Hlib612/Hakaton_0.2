@@ -1,2 +1,6 @@
 @use "../utils/variebles";
 @use "../utils/placeholders";
+
+html {
+    scroll-behavior: smooth;
+  }
