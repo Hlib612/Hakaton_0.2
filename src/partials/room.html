@@ -1,37 +1,65 @@
 <section class="userRoom">
-  <h1>RoomCraft — Створи кімнату своєї мрії</h1>
+  <div class="container">
+    <h1>RoomCraft — Створи кімнату своєї мрії</h1>
 
-  <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2 class="sidebar-title">Каталог меблів</h2>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2 class="sidebar-title">Каталог меблів</h2>
 
-      <div class="catalog-categories">
-        <button data-category="all" class="active">Всі</button>
-        <button data-category="furniture">Меблі</button>
-        <button data-category="tech">Техніка</button>
-        <button data-category="decor">Декор</button>
-      </div>
-
-      <div id="catalog" class="catalog-wrapper">
-        <div class="catalog-scroll">
-          <div class="items"></div>
+        <div class="catalog-categories">
+          <button data-category="all" class="active">Всі</button>
+          <button data-category="furniture">Меблі</button>
+          <button data-category="tech">Техніка</button>
+          <button data-category="decor">Декор</button>
         </div>
+
+        <div id="catalog" class="catalog-wrapper">
+          <div class="catalog-scroll">
+            <div class="items"></div>
+          </div>
+        </div>
+
+        <label for="wallColor">Колір стін:</label>
+        <input type="color" id="wallColor" value="#8B8B8B" />
+
+        <button id="save-btn">💾 Зберегти дизайн</button>
+      </aside>
+
+      <!-- Room area -->
+      <div id="room" class="room">
+        <div class="wall top-wall"></div>
+        <div class="wall bottom-wall"></div>
+        <div class="wall left-wall"></div>
+        <div class="wall right-wall"></div>
+        <div class="grid"></div>
       </div>
-
-      <label for="wallColor">Колір стін:</label>
-      <input type="color" id="wallColor" value="#8B8B8B" />
-
-      <button id="save-btn">💾 Зберегти дизайн</button>
-    </aside>
-
-    <!-- Room area -->
-    <div id="room" class="room">
-      <div class="wall top-wall"></div>
-      <div class="wall bottom-wall"></div>
-      <div class="wall left-wall"></div>
-      <div class="wall right-wall"></div>
-      <div class="grid"></div>
     </div>
   </div>
+    <!-- Єдина модалка для запиту -->
+    <div class="backdrop"></div>
+    <div class="tutorial">
+      <p class="tutorialParagraph">Чи ви були на нашому сайті раніше?</p>
+      <div class="buttonTutorialWrapper">
+        <div><button id="trueBtn">Так</button></div>
+        <div><button id="falseBtn">Ні</button></div>
+      </div>
+    </div>
+
+    <!-- Підказки -->
+    <div class="tips-container" id="tipsContainer" style="display: none">
+      <div class="tip" id="tip1">
+        <p>Щоб почати, виберіть категорію меблів.</p>
+      </div>
+      <div class="tip" id="tip2">
+        <p>Перетягуйте меблі у кімнату, щоб її розмістити.</p>
+      </div>
+      <div class="tip" id="tip3">
+        <p>Змініть колір стін, використовуючи палітру.</p>
+      </div>
+      <div class="tip" id="tip4">
+        <p>Щоб видалти щось, що поставили даблклік</p>
+      </div>
+      <button id="nextTip">Далі</button>
+    </div>
 </section>
