@@ -1,407 +1,401 @@
-@use "../utils/variebles";
-@use "../utils/placeholders";
+  @use "../utils/variebles";
+  @use "../utils/placeholders";
 
-/* === Base === */
-main {
-  font-family: "Press Start 2P", system-ui;
-  font-size: 10px;
-  background-color: #FFF9F0;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.userRoom {
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
-
-/* === Header === */
-.header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-size: 10px;
-  padding: 10px;
-}
-
-.header-nav-list,
-.header-nav-second-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-/* === Layout === */
-.layout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-/* === Sidebar === */
-.sidebar {
-  background-color: #FAFAF7;
-  border: 2px solid #DDD2C4;
-  padding: 20px;
-  border-radius: 8px;
-  width: 360px;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-.sidebar-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 12px;
-}
-
-.catalog-categories {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.catalog-categories button {
-  background-color: #E8D9BF;
-  border: none;
-  padding: 6px 10px;
-  margin-right: 5px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 10px;
-}
-
-.catalog-categories button.active {
-  background-color: #D6B87C;
-}
-
-.catalog-wrapper {
-  margin-bottom: 20px;
-}
-
-.catalog-scroll {
-  width: 100%;
-  overflow: visible;
-}
-
-.items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  width: 330px;
-  cursor: grab;
-}
-
-.catalog-entry {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-}
-
-.catalog-item {
-  width: 72px;
-  height: 72px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.item-label {
-  font-size: 8px;
-  color: #3E3E3E;
-}
-
-.item-price {
-  font-family: "Press Start 2P", system-ui;
-  font-size: 10px;
-  color: #5A4C3B;
-  margin-top: 2px;
-}
-
-/* === Color Picker & Save Button === */
-input[type="color"] {
-  margin: 10px 0;
-  width: 100%;
-  height: 30px;
-  border: none;
-  background: #E8D9BF;
-  padding: 4px;
-}
-
-#save-btn {
-  font-family: "Press Start 2P", system-ui;
-  background-color: #D6B87C;
-  color: #3E3E3E;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* === Room === */
-.room {
-  position: relative;
-  width: 768px;
-  height: 768px;
-  background-color: #FAFAF7;
-  border: 2px solid #DDD2C4;
-  box-sizing: border-box;
-}
-
-.wall {
-  position: absolute;
-  background-color: #8B8B8B;
-  z-index: 2;
-}
-
-.top-wall {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-}
-
-.bottom-wall {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-}
-
-.left-wall {
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 100%;
-}
-
-.right-wall {
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 2px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-}
-
-.grid-cell {
-  background-size: cover;
-  background-position: center;
-  border: 1px solid #999;
-  position: relative;
-}
-
-.furniture {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: grab;
-}
-
-/* === Tutorial Modal === */
-.backdrop {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 999;
-  display: none;
-}
-
-.tutorial {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 1000;
-  width: 350px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-
-.tutorialParagraph {
-  margin-bottom: 10px;
-}
-
-.buttonTutorialWrapper {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-#trueBtn,
-#falseBtn {
-  font-family: "Press Start 2P", system-ui;
-  font-size: 10px;
-  padding: 10px;
-  background-color: #E8D9BF;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* === Tips (подсказки) === */
-#tipsContainer {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #ffffff;
-  border: 2px solid #444;
-  padding: 16px;
-  border-radius: 8px;
-  width: 260px;
-  z-index: 1001;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: none;
-  text-align: left;
-}
-
-.tip {
-  display: none;
-}
-
-.tip.active {
-  display: block;
-}
-
-#nextTip {
-  margin-top: 10px;
-  background-color: #D6B87C;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: "Press Start 2P", system-ui;
-}
-/* адаптив */
-/* === Responsive Styles === */
-
-/* — Планшеты — */
-@media (max-width: 1024px) {
-  .layout {
-    flex-direction: column;
-    align-items: center;
+  /* === Base === */
+  main {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 10px;
+    background-color: #FFF9F0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
   }
 
-  .sidebar {
-    width: 90%;
-    margin-bottom: 20px;
+  .userRoom {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    &-layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    &-sidebar {
+      background-color: #FAFAF7;
+      border: 2px solid #DDD2C4;
+      padding: 20px;
+      border-radius: 8px;
+      width: 360px;
+      box-sizing: border-box;
+      text-align: left;
+      &-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 12px;
+      }
+    }
+
   }
 
-  .room {
-    width: 90vw;
-    height: 90vw;
+  .userRoom-about p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #4b3f2f;
+    margin: 0;
   }
 
-  .items {
-    width: 100%;
-  }
-
-  .catalog-entry {
-    width: 80px;
-  }
-
-  .catalog-item {
-    width: 64px;
-    height: 64px;
-  }
-
-  #tipsContainer {
-    width: 240px;
-    padding: 12px;
-    font-size: 8px;
-  }
-
-  .tutorial {
-    width: 90%;
-  }
-}
-
-/* — Телефоны — */
-@media (max-width: 768px) {
-  body {
-    font-size: 8px;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 16px;
+  .userRoom-about-list li {
+    margin-bottom: 8px;
   }
 
   .catalog-categories {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
-    gap: 5px;
+    margin-bottom: 20px;
   }
 
   .catalog-categories button {
-    margin-right: 0;
+    background-color: #E8D9BF;
+    border: none;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
   }
 
-  .room {
-    width: 95vw;
-    height: 95vw;
+  .catalog-categories button.active {
+    background-color: #D6B87C;
   }
 
-  .grid-cell {
-    border: 0.5px solid #999;
+  .catalog-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .catalog-scroll {
+    width: 100%;
+    overflow: visible;
   }
 
   .items {
-    gap: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 330px;
+    cursor: grab;
   }
 
   .catalog-entry {
-    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
   }
 
   .catalog-item {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 2px solid transparent;
   }
 
-  #save-btn,
-  #trueBtn,
-  #falseBtn,
-  #nextTip {
+  .item-label {
     font-size: 8px;
-    padding: 8px;
+    color: #3E3E3E;
   }
 
-  #tipsContainer {
-    width: 90%;
-    right: 5%;
-    top: 10px;
-    padding: 10px;
+  .item-price {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 10px;
+    color: #5A4C3B;
+    margin-top: 2px;
   }
+
+  /* === Color Picker & Save Button === */
+  input[type="color"] {
+    margin: 10px 0;
+    width: 100%;
+    height: 30px;
+    border: none;
+    background: #E8D9BF;
+    padding: 4px;
+  }
+
+  #save-btn {
+    font-family: "Press Start 2P", system-ui;
+    background-color: #D6B87C;
+    color: #3E3E3E;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* === Room === */
+  .room {
+    position: relative;
+    width: 768px;
+    height: 768px;
+    background-color: #FAFAF7;
+    border: 2px solid #DDD2C4;
+    box-sizing: border-box;
+  }
+
+  .wall {
+    position: absolute;
+    background-color: #8B8B8B;
+    z-index: 2;
+  }
+
+  .top-wall {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+  }
+
+  .bottom-wall {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+  }
+
+  .left-wall {
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+  }
+
+  .right-wall {
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 2px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  .grid-cell {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #999;
+    position: relative;
+  }
+
+  .furniture {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: grab;
+  }
+
+  /* === Tutorial Modal === */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); /* полупрозрачный */
+    z-index: 999;
+    display: none;
+  }
+
 
   .tutorial {
-    width: 90%;
-    padding: 16px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
   }
-}
+
+  .tutorialParagraph {
+    margin-bottom: 10px;
+  }
+
+  .buttonTutorialWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #trueBtn,
+  #falseBtn {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 10px;
+    padding: 10px;
+    background-color: #E8D9BF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* === Tips (подсказки) === */
+  #tipsContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffffff;
+    border: 2px solid #444;
+    padding: 16px;
+    border-radius: 8px;
+    width: 260px;
+    z-index: 1001;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: none;
+    text-align: left;
+  }
+
+  .tip {
+    display: none;
+  }
+
+  .tip.active {
+    display: block;
+  }
+
+  #nextTip {
+    margin-top: 10px;
+    background-color: #D6B87C;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Press Start 2P", system-ui;
+  }
+  /* адаптив */
+  /* === Responsive Styles === */
+
+  /* — Планшеты — */
+  @media (max-width: 1024px) {
+    .layout {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .room {
+      width: 90vw;
+      height: 90vw;
+    }
+
+    .items {
+      width: 100%;
+    }
+
+    .catalog-entry {
+      width: 80px;
+    }
+
+    .catalog-item {
+      width: 64px;
+      height: 64px;
+    }
+
+    #tipsContainer {
+      width: 240px;
+      padding: 12px;
+      font-size: 8px;
+    }
+
+    .tutorial {
+      width: 90%;
+    }
+  }
+
+  /* — Телефоны — */
+  @media (max-width: 768px) {
+    body {
+      font-size: 8px;
+    }
+
+    .sidebar {
+      width: 100%;
+      padding: 16px;
+    }
+
+    .catalog-categories {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .catalog-categories button {
+      margin-right: 0;
+    }
+
+    .room {
+      width: 95vw;
+      height: 95vw;
+    }
+
+    .grid-cell {
+      border: 0.5px solid #999;
+    }
+
+    .items {
+      gap: 6px;
+    }
+
+    .catalog-entry {
+      width: 70px;
+    }
+
+    .catalog-item {
+      width: 60px;
+      height: 60px;
+    }
+
+    #save-btn,
+    #trueBtn,
+    #falseBtn,
+    #nextTip {
+      font-size: 8px;
+      padding: 8px;
+    }
+
+    #tipsContainer {
+      width: 90%;
+      right: 5%;
+      top: 10px;
+      padding: 10px;
+    }
+
+    .tutorial {
+      width: 90%;
+      padding: 16px;
+    }
+  }
