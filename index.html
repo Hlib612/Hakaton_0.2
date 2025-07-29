@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoomCraft</title>
     
-    <script type="module" crossorigin src="/Hakaton_0.2/assets/index-3cfb730f.js"></script>
+    <script type="module" crossorigin src="/Hakaton_0.2/assets/index-5d94a7e8.js"></script>
+    <link rel="stylesheet" href="/Hakaton_0.2/assets/index-bac19a01.css">
   </head>
   <body>
     <header>
@@ -17,7 +18,44 @@
       <h1 class="main_title">RoomCraft</h1>
 
     
-    
+    <section class="userRoom">
+  <h1>RoomCraft — Створи кімнату своєї мрії</h1>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="sidebar-title">Каталог меблів</h2>
+
+      <div class="catalog-categories">
+        <button data-category="all" class="active">Всі</button>
+        <button data-category="furniture">Меблі</button>
+        <button data-category="tech">Техніка</button>
+        <button data-category="decor">Декор</button>
+      </div>
+
+      <div id="catalog" class="catalog-wrapper">
+        <div class="catalog-scroll">
+          <div class="items"></div>
+        </div>
+      </div>
+
+      <label for="wallColor">Колір стін:</label>
+      <input type="color" id="wallColor" value="#8B8B8B" />
+
+      <button id="save-btn">💾 Зберегти дизайн</button>
+    </aside>
+
+    <!-- Room area -->
+    <div id="room" class="room">
+      <div class="wall top-wall"></div>
+      <div class="wall bottom-wall"></div>
+      <div class="wall left-wall"></div>
+      <div class="wall right-wall"></div>
+      <div class="grid"></div>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
