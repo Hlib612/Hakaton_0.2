@@ -2,6 +2,7 @@
 @use "../utils/placeholders";
 .header {
     background-color: var(--main-bg-color);
+    font-family: var(--font-family);
 }
 .headerFlex {
     display: flex;
@@ -12,48 +13,71 @@
         gap: 30px;
         margin-left: 100px;
     }
+    &_item {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--main-text-color);
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
+    &_logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85px;
+    }
 }
+
 .headerTheme {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0;
     margin-left: auto;
+  
     &_label {
-        position: relative;
-        width: 40px;
-        height: 20px;
-        cursor: pointer;
+      position: relative;
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
+      image-rendering: pixelated;
     }
+  
     &_checkbox {
-        display: none;
+      display: none;
     }
+  
     &_slider {
-        position: absolute;
-        border-radius: 11px;
-        background-color: var(--second-bg-color);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transition: 0.4s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--ui-color);
+      border: 2px solid var(--shadow-border-color);
+      box-shadow: 2px 2px var(--shadow-border-color);
+      transition: none;
     }
+  
     &_slider::before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background-color: #FFF;
-        border-radius: 50%;
-        background-image: url('../img/sun.svg');
-        fill: #FFF;
-        background-size: contain;
-        transition: 0.4s;
-        background-color: var(--hover-color);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url('../img/sun.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: var(--hover-color);
+      border: 1px solid var(--shadow-border-color);
+      image-rendering: pixelated;
+      transition: none;
     }
+  
     &_checkbox:checked + &_slider::before {
-        transform: translateX(20px);
-        background-image: url('../img/half-moon.svg');
-        background-color: var(--hover-color);
+      transform: translateX(20px);
+      background-image: url('../img/half-moon.svg');
     }
-}
+  }
+  
